@@ -1,4 +1,4 @@
-# teste
+# my-project
 
 ## Project setup
 ```

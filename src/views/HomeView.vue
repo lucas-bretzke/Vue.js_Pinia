@@ -1,18 +1,17 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <h1>Utilizandop Pinia</h1>
+    <h2>{{ counter.showCount }}</h2>
+    <button @click="counter.Increment">Increment</button>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import { useCounterStore } from "@/stores/counterStores";
+import { Options, Vue } from "vue-class-component";
 
-export default defineComponent({
-  name: 'HomeView',
-  components: {
-    HelloWorld,
-  },
-});
+@Options({})
+export default class HomeView extends Vue {
+  counter = useCounterStore();
+}
 </script>
